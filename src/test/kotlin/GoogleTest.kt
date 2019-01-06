@@ -1,4 +1,3 @@
-
 import io.kotlintest.specs.StringSpec
 import org.junit.gen5.api.Assertions.assertEquals
 import org.openqa.selenium.WebDriver
