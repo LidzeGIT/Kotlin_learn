@@ -4,16 +4,11 @@ import java.util.concurrent.TimeUnit
 
 class GoogleTest : SeleniumHelpers() {
 
-
     init {
-        driver.manage()?.timeouts()?.implicitlyWait(10, TimeUnit.SECONDS)
-        driver.manage()?.window()?.maximize()
-
         "Проверка авторизации в Gmail"{
             authorization()
         }
     }
-
 
     fun authorization(){
         googlePage.run {
@@ -24,7 +19,7 @@ class GoogleTest : SeleniumHelpers() {
             click(nextButton)
             sendKeys(passwordLine,"asd")
             click(nextButton)
-            var errorDescription = errorMessage.text
+            val errorDescription = errorMessage.text
             assertEquals(errorDescription,"Неверный пароль. Повторите попытку или нажмите на ссылку \"Забыли пароль?\", чтобы сбросить его.")
             close()
         }
