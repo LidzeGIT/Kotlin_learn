@@ -28,6 +28,7 @@ open class SeleniumHelpers : StringSpec() {
     }
 
     fun sendKeys(field:WebElement, value:String){
+        field.clear()
         field.sendKeys(value)
         field.sendKeys(Keys.TAB)
     }

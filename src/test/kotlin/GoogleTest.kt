@@ -1,6 +1,5 @@
 import helpers.SeleniumHelpers
 import org.junit.gen5.api.Assertions.assertEquals
-import java.util.concurrent.TimeUnit
 
 class GoogleTest : SeleniumHelpers() {
 
