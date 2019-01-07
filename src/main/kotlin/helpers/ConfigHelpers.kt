@@ -1,12 +1,10 @@
 package helpers
-
-import io.kotlintest.specs.StringSpec
 import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.io.IOException
 import java.util.Properties
 
-open class ConfigHelpers: StringSpec() {
+open class ConfigHelpers {
 
     private var fis: FileInputStream? = null
     private var PROPERTIE: Properties? = null

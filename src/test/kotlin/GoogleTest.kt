@@ -1,8 +1,10 @@
 import helpers.SeleniumHelpers
 import org.junit.gen5.api.Assertions.assertEquals
+import page.GooglePage
 
 class GoogleTest : SeleniumHelpers() {
 
+    val googlePage = GooglePage(driver)
 
     init {
         "Проверка авторизации в Gmail"{
@@ -19,8 +21,7 @@ class GoogleTest : SeleniumHelpers() {
             click(nextButton)
             sendKeys(passwordLine, "dasd")
             click(nextButton)
-            val errorDescription = errorMessage.text
-            assertEquals(errorDescription,"Неверный пароль. Повторите попытку или нажмите на ссылку \"Забыли пароль?\", чтобы сбросить его.")
+            assertEquals(errorMessage.text,"Неверный пароль. Повторите попытку или нажмите на ссылку \"Забыли пароль?\", чтобы сбросить его.")
             close()
         }
     }

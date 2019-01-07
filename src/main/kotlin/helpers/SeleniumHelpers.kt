@@ -13,8 +13,7 @@ import java.util.concurrent.TimeUnit
 
 open class SeleniumHelpers : StringSpec() {
 
-    private val driver: WebDriver = ChromeDriver()
-    val googlePage = GooglePage(driver)
+    protected val driver: WebDriver = ChromeDriver()
     private val wait = WebDriverWait(driver, 10)
     private val config:ConfigHelpers? = ConfigHelpers()
 
