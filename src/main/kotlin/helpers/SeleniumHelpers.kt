@@ -13,9 +13,10 @@ import java.util.concurrent.TimeUnit
 
 open class SeleniumHelpers : StringSpec() {
 
-    protected val driver: WebDriver = ChromeDriver()
+    private val driver: WebDriver = ChromeDriver()
     val googlePage = GooglePage(driver)
-    protected val wait = WebDriverWait(driver, 10)
+    private val wait = WebDriverWait(driver, 10)
+    private val config:ConfigHelpers? = ConfigHelpers()
 
 
     init {
@@ -31,6 +32,11 @@ open class SeleniumHelpers : StringSpec() {
         field.clear()
         field.sendKeys(value)
         field.sendKeys(Keys.TAB)
+    }
+
+    fun config(key:String): String {
+        val lol = config!!.getProperty(key)
+        return lol!!
     }
 
     fun close(){
