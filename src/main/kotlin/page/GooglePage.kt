@@ -27,7 +27,7 @@ class GooglePage(private val driver: WebDriver) {
     @FindBy(xpath = "//content[@class='CwaK9']//span[text()='Далее']")
     lateinit var nextButton:WebElement
 
-    @FindBy(xpath = "//div[@class='GQ8Pzc']")
+    @FindBy(xpath = "//content[contains(text(),'Неверный пароль. Повторите попытку или нажмите на ссылку \"Забыли пароль?\", чтобы сбросить его.')]")
     lateinit var errorMessage: WebElement
 
     @FindBy(xpath = "//input[@name='password']")

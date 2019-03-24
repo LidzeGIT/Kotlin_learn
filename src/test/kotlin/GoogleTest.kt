@@ -12,7 +12,7 @@ class GoogleTest : SeleniumHelpers() {
         }
     }
 
-    fun authorization(){
+    fun authorization() {
         googlePage.run {
             open()
             verifyUrl()
@@ -21,8 +21,11 @@ class GoogleTest : SeleniumHelpers() {
             click(nextButton)
             sendKeys(passwordLine, "dasd")
             click(nextButton)
-            assertEquals(errorMessage.text,"Неверный пароль. Повторите попытку или нажмите на ссылку \"Забыли пароль?\", чтобы сбросить его.")
-            close()
+            try {
+                assertEquals(errorMessage.text, "Неверный пароль. Повторите попытку или нажмите на ссылку \"Забыли пароль?\", чтобы сбросить его.")
+            } finally {
+                close()
+            }
         }
     }
 }
